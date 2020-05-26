@@ -1,0 +1,10 @@
+[controller]
+ctrlr        ansible_connection=local
+
+[nodes]
+node1
+node2
+
+[cluster:children]
+controller
+nodes

@@ -1,0 +1,15 @@
+---
+- hosts: controller
+  vars:
+    root_password_compute: vagrant    
+  tasks:
+    - name: Verify ssh root key
+      stat:
+        path: /root/.ssh/id_rsa
+      register: has_ssh_key
+    - name: Generate ssh root key
+      shell: |
+        ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+      when: has_ssh_key.stat.exists == false
+    - include_tasks: ssh_trust.yml
+      loop: "{{ nodes_ip }}"

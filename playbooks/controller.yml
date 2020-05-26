@@ -1,0 +1,5 @@
+---
+- name: controller
+  hosts: controller
+  roles:
+    - controller

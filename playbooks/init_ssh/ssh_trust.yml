@@ -1,0 +1,11 @@
+---
+- name: Check SSH Trust
+  shell: "ssh -o PasswordAuthentication=no root@{{ item }}"
+  ignore_errors: yes
+  register: ssh_trust
+
+- name: Create SSH Trust
+  shell: "sshpass -p {{ root_password_compute }} \                                  
+          ssh-copy-id root@{{ item }} -o StrictHostKeyChecking=no"
+  when: ssh_trust.rc != 0
+ 

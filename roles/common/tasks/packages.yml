@@ -1,0 +1,15 @@
+---
+- name: Install common packages
+  dnf:
+    name:
+      - python3
+      - git
+      - mlocate
+      - epel-release
+      - tree
+    state: present
+
+- name: Install Development tools package group
+  dnf:
+    name: "@Development tools"
+    state: present
