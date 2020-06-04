@@ -1,5 +1,5 @@
-127.0.0.1       ctrlr.anslearn.lan      ctrlr
-192.168.50.101  node1.anslearn.lan      node1
-192.168.50.102  node2.anslearn.lan      node2
+192.168.50.2        ctrlr.anslearn.lan      ctrlr
+192.168.50.101      node1.anslearn.lan      node1
+192.168.50.102      node2.anslearn.lan      node2
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
